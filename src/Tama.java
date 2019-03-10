@@ -1,53 +1,50 @@
 public class Tama {
-    int food, exp, health, poop, lvl;
-    String name, fileName;
+    private int food, exp, health, poop, level;
+    private String name, fileName;
+
+    private int maxLevel;
 
     public Tama() {
-        lvl = 1;
+        level = 1;
     }
     public Tama(String fileName){
-        lvl = 1;
+        level = 1;
         name = fileName;
         this.fileName = fileName;
     }
 
-    public int getExp() {
-        return exp;
+    /**
+     *
+     * @return true if Tama leveled up; false otherwise.
+     */
+    public boolean levelUp() {
+        if(exp == 100 && level != maxLevel) {
+            exp = 0;
+            level++;
+            return true;
+        }
+        return false;
     }
 
-    public void setExp(int exp) {
-        this.exp = exp;
+    public boolean feed() {
+        if(isHungry()) {
+            food += 3;
+            return true;
+        }
+        return false;
     }
 
-    public int getFood() {
-        return food;
+    private boolean isHungry() {
+        return food < 5;
     }
 
-    public void setFood(int food) {
-        this.food = food;
+    public void poop() {
+        poop++;
     }
 
-    public int getHealth() {
-        return health;
+    public void cleanPoop() {
+        poop = 0;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
 
-    public int getPoop() {
-        return poop;
-    }
-
-    public void setPoop(int poop) {
-        this.poop = poop;
-    }
-
-    public int getLvl() {
-        return lvl;
-    }
-
-    public void setLvl(int lvl) {
-        this.lvl = lvl;
-    }
 }
