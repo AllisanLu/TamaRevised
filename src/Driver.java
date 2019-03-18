@@ -2,13 +2,14 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class Driver extends Application {
     GridPane bg;
-    BorderPane bp;
+    BorderPane root;
     @Override
     public void start(Stage primaryStage) throws Exception {
         LoaderAndSaver load = new LoaderAndSaver();
@@ -17,14 +18,15 @@ public class Driver extends Application {
         tam.feed();
         System.out.println(tam);
 
-        primaryStage.setTitle("Tamagatchi");
-        bp = new BorderPane();
-        Scene scene = new Scene(bp,200, 250);
+        primaryStage.setTitle("Tama");
+        root = new BorderPane();
+        root.setId("root");
+        Scene scene = new Scene(root,200, 250);
+        scene.getStylesheets().add("background.css");
         primaryStage.setScene(scene);
 
         bg = new GridPane();
-        createBackground();
-        bp.setCenter(bg);
+        root.setCenter(bg);
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(e -> {
@@ -33,11 +35,9 @@ public class Driver extends Application {
         });
     }
 
-    public void createBackground(){
-        Image border = new Image(Driver.class.getResourceAsStream("images/Border.png"));
+    public void createIcons(){
         Image health = new Image(Driver.class.getResourceAsStream("images/HealthBar.png"));
-        bg.getChildren().add(new ImageView(border));
-        bg.getChildren().add()
+        bg.add(new ImageView(health),3, 0);
 
-    }
+   }
 }
