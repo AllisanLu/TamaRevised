@@ -1,5 +1,7 @@
-public class Tama {
-    private int food, exp, health, poop, level;
+import java.io.Serializable;
+
+public class Tama implements Serializable {
+    private int food, exp, poop, level;
     private String name, fileName;
 
     private int maxLevel;
@@ -7,9 +9,9 @@ public class Tama {
     public Tama() {
         level = 1;
     }
+
     public Tama(String fileName){
         level = 1;
-        name = fileName;
         this.fileName = fileName;
     }
 
@@ -46,5 +48,19 @@ public class Tama {
         poop = 0;
     }
 
+    public void update() {
+        exp += 10;
+        food -= 2;
+        poop();
+        levelUp();
+    }
 
+    @Override
+    public String toString() {
+        return "File: " + fileName + "\n\t" +
+                "Food: " + food + "\n\t" +
+                "Exp: " + exp + "\n\t" +
+                "Poop: " + poop + "\n\t" +
+                "level: "+ level + "\n\t";
+    }
 }
