@@ -45,34 +45,30 @@ public class Driver extends Application {
    }
 
    private void createButtons() {
-        HBox buttonContainer = new HBox(20);
+        HBox buttonContainer = new HBox(5);
         buttonContainer.setAlignment(Pos.CENTER);
 
         String pathToButtons = "images/buttons/";
+        String[] buttonPaths = {pathToButtons + "FeedButton.png", pathToButtons + "CleanButton.png", pathToButtons + "ResetButton.png"};
 
-       Image feedImage = new Image(pathToButtons + "FeedButton.png");
-       Button feed = new Button();
-       feed.setGraphic(new ImageView(feedImage));
-       feed.setOnMouseClicked(e -> currentTama.feed());
-       buttonContainer.getChildren().add(feed);
+        Button[] buttons = new Button[buttonPaths.length];
 
-       Image cleanImage = new Image(pathToButtons + "CleanButton.png");
-       Button clean = new Button();
-       clean.setGraphic(new ImageView(cleanImage));
-       clean.setMaxSize(cleanImage.getWidth(), cleanImage.getHeight());
-       clean.setOnMouseClicked(e -> currentTama.cleanPoop());
-       buttonContainer.getChildren().add(clean);
+        for(int i = 0; i < buttons.length; i++) {
+            Button button = new Button();
+            Image image = new Image(buttonPaths[i]);
+            button.setMinSize(image.getWidth(), image.getHeight());
 
-       Image resetImage = new Image(pathToButtons + "ResetButton.png");
-       ImageView resetImageView = new ImageView(resetImage);
-       resetImageView.setFitWidth(resetImage.getWidth());
-       resetImageView.setFitHeight(resetImage.getHeight());
-       Button reset = new Button();
-       reset.setGraphic(resetImageView);
-       reset.setMaxSize(resetImage.getWidth(), resetImage.getHeight());
-       reset.setOnMouseClicked(e -> currentTama.reset());
-       buttonContainer.getChildren().add(reset);
+            BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+            Background background = new Background(backgroundImage);
+            button.setBackground(background);
+            buttonContainer.getChildren().add(button);
+            buttons[i] = button;
+        }
 
-       root.setBottom(buttonContainer);
+        buttons[0].setOnMouseClicked(e -> currentTama.feed());
+        buttons[1].setOnMouseClicked(e -> currentTama.cleanPoop());
+        buttons[2].setOnMouseClicked(e -> currentTama.cleanPoop());
+
+        root.setBottom(buttonContainer);
    }
 }

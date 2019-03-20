@@ -29,6 +29,7 @@ public class Tama implements Serializable {
     }
 
     public boolean feed() {
+        System.out.println("Hello");
         if(isHungry()) {
             food += 3;
             return true;
