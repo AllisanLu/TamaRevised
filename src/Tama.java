@@ -63,4 +63,11 @@ public class Tama implements Serializable {
                 "Poop: " + poop + "\n\t" +
                 "level: "+ level + "\n\t";
     }
+
+    public void reset() {
+        food = 8;
+        exp = 0;
+        cleanPoop();
+        level = 0;
+    }
 }
