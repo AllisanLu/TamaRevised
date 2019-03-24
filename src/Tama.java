@@ -1,8 +1,12 @@
+import javafx.scene.image.Image;
+
 import java.io.Serializable;
 
 public class Tama implements Serializable {
     private int food, exp, poop, level;
     private String name, fileName;
+
+    private Image look;
 
     private int maxLevel;
 
@@ -29,7 +33,6 @@ public class Tama implements Serializable {
     }
 
     public boolean feed() {
-        System.out.println("Hello");
         if(isHungry()) {
             food += 3;
             return true;
@@ -54,6 +57,8 @@ public class Tama implements Serializable {
         food -= 2;
         poop();
         levelUp();
+
+        getLooks();
     }
 
     @Override
@@ -70,5 +75,14 @@ public class Tama implements Serializable {
         exp = 0;
         cleanPoop();
         level = 0;
+    }
+
+    public Image getLooks() {
+        switch(level) {
+            default: return new Image("images/poo.png");
+            case 0: return new Image(fileName + "dead.gif");
+            case 1: return new Image(fileName + "First.gif");
+            case 2: return new Image(fileName + "Second.gif");
+        }
     }
 }

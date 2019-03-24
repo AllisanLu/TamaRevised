@@ -11,14 +11,15 @@ public class Driver extends Application {
     GridPane bg;
     BorderPane root;
     private Tama currentTama;
+    private Image tamaDisplay;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         LoaderAndSaver load = new LoaderAndSaver();
-        load.load();
-        currentTama = load.getTama();
-        currentTama.feed();
+
+        currentTama = load.load();
         System.out.println(currentTama);
+        tamaDisplay = currentTama.getLooks();
 
         primaryStage.setTitle("Tama");
         root = new BorderPane();
@@ -30,12 +31,15 @@ public class Driver extends Application {
         bg = new GridPane();
         root.setCenter(bg);
         createButtons();
+        root.setCenter(new ImageView(tamaDisplay));
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(e -> {
             System.out.println("Closing");
             load.save(currentTama);
         });
+
+
     }
 
     private void createIcons(){

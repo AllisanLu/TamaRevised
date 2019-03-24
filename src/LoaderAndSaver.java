@@ -11,10 +11,10 @@ public class LoaderAndSaver {
         file = new File(SAVE_FILE);
     }
 
-    public void load() {
+    public Tama load() {
         try {
             if(file.createNewFile()) {
-                tama = new Tama("Hello");
+                tama = new Tama("images/jerry/");
             }
             else {
                 FileInputStream fileInput = new FileInputStream(file);
@@ -30,6 +30,8 @@ public class LoaderAndSaver {
             System.out.println("Could not read Object");
             System.exit(0);
         }
+
+        return tama;
     }
 
     public void save(Tama tama) {
@@ -40,9 +42,6 @@ public class LoaderAndSaver {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
-    public Tama getTama() {
-        return tama;
     }
 }
