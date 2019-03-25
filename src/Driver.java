@@ -12,6 +12,7 @@ public class Driver extends Application {
     BorderPane root;
     private Tama currentTama;
     private Image tamaDisplay;
+    private Thread hunger;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -37,6 +38,7 @@ public class Driver extends Application {
         primaryStage.setOnCloseRequest(e -> {
             System.out.println("Closing");
             load.save(currentTama);
+            hunger.stop();
         });
         hunger();
     }
@@ -76,9 +78,10 @@ public class Driver extends Application {
    }
 
     private void hunger(){
-        new Thread( () -> {
+      hunger = new Thread( () -> {
             double begin = System.currentTimeMillis();
             while(true){
+                System.out.println("runninggg");
                 double current = System.currentTimeMillis();
                 if((current - begin) >= 60000 && currentTama.getFood() > 0) {
                     currentTama.setFood(currentTama.getFood() - 1);
@@ -86,9 +89,14 @@ public class Driver extends Application {
                         System.out.println("IM HUNGRYYY");
                     begin = System.currentTimeMillis();
                 }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        ).start();
+        });
+      hunger.start();
     }
 
 }
