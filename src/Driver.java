@@ -38,8 +38,7 @@ public class Driver extends Application {
             System.out.println("Closing");
             load.save(currentTama);
         });
-
-
+        hunger();
     }
 
     private void createIcons(){
@@ -75,4 +74,21 @@ public class Driver extends Application {
 
         root.setBottom(buttonContainer);
    }
+
+    private void hunger(){
+        new Thread( () -> {
+            double begin = System.currentTimeMillis();
+            while(true){
+                double current = System.currentTimeMillis();
+                if((current - begin) >= 60000 && currentTama.getFood() > 0) {
+                    currentTama.setFood(currentTama.getFood() - 1);
+                    if(currentTama.getFood() == 0)
+                        System.out.println("IM HUNGRYYY");
+                    begin = System.currentTimeMillis();
+                }
+            }
+        }
+        ).start();
+    }
+
 }

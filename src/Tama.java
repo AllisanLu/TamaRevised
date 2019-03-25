@@ -19,6 +19,30 @@ public class Tama implements Serializable {
         this.fileName = fileName;
     }
 
+    public int getFood() {
+        return food;
+    }
+
+    public void setFood(int food) {
+        this.food = food;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
+
+    public int getPoop() {
+        return poop;
+    }
+
+    public void setPoop(int poop) {
+        this.poop = poop;
+    }
+
     /**
      *
      * @return true if Tama leveled up; false otherwise.
@@ -61,6 +85,22 @@ public class Tama implements Serializable {
         getLooks();
     }
 
+//    public void hunger(){
+//        new Thread( () -> {
+//            double begin = System.currentTimeMillis();
+//            while(true){
+//                double current = System.currentTimeMillis();
+//                if((current - begin) >= 60000 && food > 0) {
+//                    food--;
+//                    if(food == 0)
+//                        System.out.println("IM HUNGRYYY");
+//                    begin = System.currentTimeMillis();
+//                }
+//            }
+//        }
+//        ).start();
+//    }
+
     @Override
     public String toString() {
         return "File: " + fileName + "\n\t" +
@@ -85,4 +125,5 @@ public class Tama implements Serializable {
             case 2: return new Image(fileName + "Second.gif");
         }
     }
+
 }
