@@ -11,7 +11,7 @@ public class Driver extends Application {
     GridPane bg;
     BorderPane root;
     private Tama currentTama;
-    private Image tamaDisplay;
+    private ImageView tamaDisplay;
     private Thread hunger;
 
     @Override
@@ -20,8 +20,7 @@ public class Driver extends Application {
 
         currentTama = load.load();
         System.out.println(currentTama);
-        tamaDisplay = currentTama.getLooks();
-
+        tamaDisplay = new ImageView(currentTama.getLooks());
         primaryStage.setTitle("Tama");
         root = new BorderPane();
         root.setId("root");
@@ -32,11 +31,10 @@ public class Driver extends Application {
         bg = new GridPane();
         root.setCenter(bg);
         createButtons();
-        root.setCenter(new ImageView(tamaDisplay));
+        root.setCenter(tamaDisplay);
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(e -> {
-            System.out.println("Closing");
             load.save(currentTama);
             hunger.stop();
         });
@@ -72,30 +70,32 @@ public class Driver extends Application {
 
         buttons[0].setOnMouseClicked(e -> currentTama.feed());
         buttons[1].setOnMouseClicked(e -> currentTama.cleanPoop());
-        buttons[2].setOnMouseClicked(e -> currentTama.cleanPoop());
+        buttons[2].setOnMouseClicked(e -> {
+            currentTama.reset();
+            updateTamaDisplay(currentTama.getLooks());
+        });
 
         root.setBottom(buttonContainer);
    }
 
+   private void updateTamaDisplay(Image image) {
+        tamaDisplay.setImage(image);
+   }
+
     private void hunger(){
       hunger = new Thread( () -> {
-            double begin = System.currentTimeMillis();
-            while(true){
+            while(true) {
                 System.out.println("runninggg");
-                double current = System.currentTimeMillis();
-                if((current - begin) >= 60000 && currentTama.getFood() > 0) {
-                    currentTama.setFood(currentTama.getFood() - 1);
-                    if(currentTama.getFood() == 0)
-                        System.out.println("IM HUNGRYYY");
-                    begin = System.currentTimeMillis();
-                }
+                currentTama.update();
+
+                updateTamaDisplay(currentTama.getLooks());
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(100000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-        });
+            });
       hunger.start();
     }
 

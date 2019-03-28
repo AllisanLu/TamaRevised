@@ -43,12 +43,20 @@ public class Tama implements Serializable {
         this.poop = poop;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
     /**
      *
      * @return true if Tama leveled up; false otherwise.
      */
     public boolean levelUp() {
-        if(exp == 100 && level != maxLevel) {
+        if(exp >= 100 && level != maxLevel) {
             exp = 0;
             level++;
             return true;
@@ -57,7 +65,11 @@ public class Tama implements Serializable {
     }
 
     public boolean feed() {
+
+        System.out.println(this);
+
         if(isHungry()) {
+            exp +=  5;
             food += 3;
             return true;
         }
@@ -74,6 +86,8 @@ public class Tama implements Serializable {
 
     public void cleanPoop() {
         poop = 0;
+
+        System.out.println(this);
     }
 
     public void update() {
@@ -83,23 +97,9 @@ public class Tama implements Serializable {
         levelUp();
 
         getLooks();
-    }
 
-//    public void hunger(){
-//        new Thread( () -> {
-//            double begin = System.currentTimeMillis();
-//            while(true){
-//                double current = System.currentTimeMillis();
-//                if((current - begin) >= 60000 && food > 0) {
-//                    food--;
-//                    if(food == 0)
-//                        System.out.println("IM HUNGRYYY");
-//                    begin = System.currentTimeMillis();
-//                }
-//            }
-//        }
-//        ).start();
-//    }
+        System.out.println(this);
+    }
 
     @Override
     public String toString() {
@@ -114,7 +114,9 @@ public class Tama implements Serializable {
         food = 8;
         exp = 0;
         cleanPoop();
-        level = 0;
+        level = 1;
+
+        System.out.println(this);
     }
 
     public Image getLooks() {
@@ -125,5 +127,4 @@ public class Tama implements Serializable {
             case 2: return new Image(fileName + "Second.gif");
         }
     }
-
 }
