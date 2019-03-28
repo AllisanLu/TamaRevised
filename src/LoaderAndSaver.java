@@ -4,22 +4,24 @@ public class LoaderAndSaver {
 
     private static final String SAVE_FILE = "saveData.txt";
     private File file;
-    private Tama tama;
 
 
     public LoaderAndSaver() {
         file = new File(SAVE_FILE);
     }
 
-    public Tama load() {
+    public Tamas load() {
+        Tamas tamas = null;
         try {
             if(file.createNewFile()) {
-                tama = new Tama("images/jerry/");
+                Tama terry = new Tama("images/terry/");
+                Tama jerry = new Tama("images/jerry");
+                tamas = new Tamas(terry, jerry, terry);
             }
             else {
                 FileInputStream fileInput = new FileInputStream(file);
                 ObjectInputStream input = new ObjectInputStream(fileInput);
-                tama = (Tama) input.readObject();
+                tamas = (Tamas) input.readObject();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,14 +33,14 @@ public class LoaderAndSaver {
             System.exit(0);
         }
 
-        return tama;
+        return tamas;
     }
 
-    public void save(Tama tama) {
+    public void save(Tamas tamas) {
         try {
             FileOutputStream fileOutput = new FileOutputStream(file);
             ObjectOutputStream output = new ObjectOutputStream(fileOutput);
-            output.writeObject(tama);
+            output.writeObject(tamas);
         } catch (IOException e) {
             e.printStackTrace();
         }

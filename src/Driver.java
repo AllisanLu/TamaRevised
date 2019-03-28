@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Driver extends Application {
     GridPane bg;
     BorderPane root;
-    private Tama currentTama;
+    private Tamas tamas;
     private ImageView tamaDisplay;
     private Thread hunger;
 
@@ -18,9 +18,9 @@ public class Driver extends Application {
     public void start(Stage primaryStage) throws Exception {
         LoaderAndSaver load = new LoaderAndSaver();
 
-        currentTama = load.load();
-        System.out.println(currentTama);
-        tamaDisplay = new ImageView(currentTama.getLooks());
+        tamas = load.load();
+        System.out.println(tamas.getCurrentTama());
+        tamaDisplay = new ImageView(tamas.getCurrentTama().getLooks());
         primaryStage.setTitle("Tama");
         root = new BorderPane();
         root.setId("root");
@@ -35,7 +35,7 @@ public class Driver extends Application {
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(e -> {
-            load.save(currentTama);
+            load.save(tamas);
             hunger.stop();
         });
         hunger();
@@ -68,11 +68,11 @@ public class Driver extends Application {
             buttons[i] = button;
         }
 
-        buttons[0].setOnMouseClicked(e -> currentTama.feed());
-        buttons[1].setOnMouseClicked(e -> currentTama.cleanPoop());
+        buttons[0].setOnMouseClicked(e -> tamas.getCurrentTama().feed());
+        buttons[1].setOnMouseClicked(e -> tamas.getCurrentTama().cleanPoop());
         buttons[2].setOnMouseClicked(e -> {
-            currentTama.reset();
-            updateTamaDisplay(currentTama.getLooks());
+            tamas.getCurrentTama().reset();
+            updateTamaDisplay(tamas.getCurrentTama().getLooks());
         });
 
         root.setBottom(buttonContainer);
@@ -86,9 +86,9 @@ public class Driver extends Application {
       hunger = new Thread( () -> {
             while(true) {
                 System.out.println("runninggg");
-                currentTama.update();
+                tamas.getCurrentTama().update();
 
-                updateTamaDisplay(currentTama.getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().getLooks());
                 try {
                     Thread.sleep(100000);
                 } catch (InterruptedException e) {

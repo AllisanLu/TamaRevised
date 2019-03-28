@@ -1,9 +1,11 @@
-public class Tamas {
+import java.io.Serializable;
+
+public class Tamas implements Serializable {
 
     private Tama[] tamas;
     private Tama currentTama;
 
-    public Tamas(Tama[] tamas, Tama currentTama) {
+    public Tamas(Tama currentTama, Tama... tamas) {
         this.tamas = tamas;
         this.currentTama = currentTama;
     }
