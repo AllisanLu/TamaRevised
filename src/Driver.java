@@ -33,21 +33,39 @@ public class Driver extends Application {
         Scene scene = new Scene(root,200, 250);
         scene.getStylesheets().add("background.css");
 
+        primaryStage.setScene(scene);
+
+        bg = new GridPane();
+        root.setCenter(bg);
+        root.setCenter(tamaDisplay);
+        createButtons();
+        createIcons();
+        createMenu();
+        primaryStage.show();
+
+        primaryStage.setOnCloseRequest(e -> {
+            load.save(tamas);
+            hunger.stop();
+        });
+        hunger();
+    }
+
+    private void createMenu(){
         ContextMenu menu = new ContextMenu();
-        MenuItem jerry = new MenuItem();
+        MenuItem jerry = new MenuItem("Jerry");
         jerry.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                tamas.switchTama("jerry");
+                tamas.switchTama("images/jerry");
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
             }
         });
 
-        MenuItem terry = new MenuItem();
+        MenuItem terry = new MenuItem("Terry");
         terry.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                tamas.switchTama("terry");
+                tamas.switchTama("images/terry");
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
             }
         });
@@ -60,21 +78,6 @@ public class Driver extends Application {
             }
 
         });
-
-        primaryStage.setScene(scene);
-
-        bg = new GridPane();
-        root.setCenter(bg);
-        createButtons();
-        createIcons();
-        root.setCenter(tamaDisplay);
-        primaryStage.show();
-
-        primaryStage.setOnCloseRequest(e -> {
-            load.save(tamas);
-            hunger.stop();
-        });
-        hunger();
     }
 
     private void createIcons(){

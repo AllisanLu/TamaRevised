@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Tama implements Serializable {
     private int food, exp, poop, level;
-    private String name, fileName;
+    private String fileName;
 
     private Image look;
 
@@ -17,15 +17,6 @@ public class Tama implements Serializable {
     public Tama(String fileName){
         level = 1;
         this.fileName = fileName;
-        this.name = fileName;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getFood() {
