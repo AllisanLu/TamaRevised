@@ -1,9 +1,11 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -26,6 +28,16 @@ public class Driver extends Application {
         root.setId("root");
         Scene scene = new Scene(root,200, 250);
         scene.getStylesheets().add("background.css");
+
+        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("Switching");
+                tamas.switchTama(tamas.getCurrentTama().getName());
+                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+            }
+        });
+
         primaryStage.setScene(scene);
 
         bg = new GridPane();

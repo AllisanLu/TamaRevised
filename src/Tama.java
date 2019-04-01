@@ -17,6 +17,15 @@ public class Tama implements Serializable {
     public Tama(String fileName){
         level = 1;
         this.fileName = fileName;
+        this.name = fileName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getFood() {
