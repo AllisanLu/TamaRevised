@@ -1,10 +1,14 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -29,13 +33,32 @@ public class Driver extends Application {
         Scene scene = new Scene(root,200, 250);
         scene.getStylesheets().add("background.css");
 
-        scene.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        ContextMenu menu = new ContextMenu();
+        MenuItem jerry = new MenuItem();
+        jerry.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(MouseEvent event) {
-                System.out.println("Switching");
-                tamas.switchTama(tamas.getCurrentTama().getName());
+            public void handle(ActionEvent event) {
+                tamas.switchTama("jerry");
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
             }
+        });
+
+        MenuItem terry = new MenuItem();
+        terry.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                tamas.switchTama("terry");
+                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+            }
+        });
+
+        menu.getItems().addAll(jerry, terry);
+        root.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+            @Override
+            public void handle(ContextMenuEvent event){
+                menu.show(root, event.getScreenX(), event.getScreenY());
+            }
+
         });
 
         primaryStage.setScene(scene);
@@ -43,6 +66,7 @@ public class Driver extends Application {
         bg = new GridPane();
         root.setCenter(bg);
         createButtons();
+        createIcons();
         root.setCenter(tamaDisplay);
         primaryStage.show();
 
@@ -55,7 +79,7 @@ public class Driver extends Application {
 
     private void createIcons(){
         Image health = new Image("images/HealthBar.png");
-        bg.add(new ImageView(health),3, 0);
+        root.setTop(new ImageView(health));
 
    }
 
