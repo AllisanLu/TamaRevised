@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
@@ -19,14 +20,17 @@ public class Driver extends Application {
     private Tamas tamas;
     private ImageView tamaDisplay;
     private Thread hunger;
+    private ProgressBar progress;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         LoaderAndSaver load = new LoaderAndSaver();
 
         tamas = load.load();
-        System.out.println(tamas.getCurrentTama());
         tamaDisplay = new ImageView(tamas.getCurrentTama().getLooks());
+
+        progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
+
         primaryStage.setTitle("Tama");
         root = new BorderPane();
         root.setId("root");
@@ -36,10 +40,10 @@ public class Driver extends Application {
         primaryStage.setScene(scene);
 
         bg = new GridPane();
+        root.setTop(progress);
         root.setCenter(bg);
         root.setCenter(tamaDisplay);
         createButtons();
-        createIcons();
         createMenu();
         primaryStage.show();
 
@@ -80,12 +84,6 @@ public class Driver extends Application {
         });
     }
 
-    private void createIcons(){
-        Image health = new Image("images/HealthBar.png");
-        root.setTop(new ImageView(health));
-
-   }
-
    private void createButtons() {
         HBox buttonContainer = new HBox(5);
         buttonContainer.setAlignment(Pos.CENTER);
@@ -121,13 +119,16 @@ public class Driver extends Application {
         tamaDisplay.setImage(image);
    }
 
+   private void updateProgress(double progress) {
+        this.progress.setProgress(progress);
+   }
     private void hunger(){
       hunger = new Thread( () -> {
             while(true) {
-                System.out.println("runninggg");
                 tamas.getCurrentTama().update();
 
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateProgress(tamas.getCurrentTama().getPercentHealth());
                 try {
                     Thread.sleep(100000);
                 } catch (InterruptedException e) {

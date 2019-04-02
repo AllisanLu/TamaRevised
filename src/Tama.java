@@ -3,7 +3,7 @@ import javafx.scene.image.Image;
 import java.io.Serializable;
 
 public class Tama implements Serializable {
-    private int food, exp, poop, level;
+    private int food, exp, poop, level, health, maxHealth;
     private String fileName;
 
     private Image look;
@@ -14,9 +14,12 @@ public class Tama implements Serializable {
         level = 1;
     }
 
-    public Tama(String fileName){
+    public Tama(String fileName) {
         level = 1;
         this.fileName = fileName;
+        food = 5;
+        health = 10;
+        maxHealth = 10;
     }
 
     public int getFood() {
@@ -51,6 +54,9 @@ public class Tama implements Serializable {
         this.fileName = fileName;
     }
 
+    public double getPercentHealth() {
+        return (double) health /maxHealth;
+    }
     /**
      *
      * @return true if Tama leveled up; false otherwise.
@@ -78,6 +84,10 @@ public class Tama implements Serializable {
 
     private boolean isHungry() {
         return food < 5;
+    }
+
+    private boolean isStarving() {
+        return food < 0;
     }
 
     public void poop() {
