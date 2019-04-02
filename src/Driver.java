@@ -56,7 +56,7 @@ public class Driver extends Application {
         jerry.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                tamas.switchTama("images/jerry");
+                tamas.switchTama("images/jerry/");
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
             }
         });
@@ -65,7 +65,7 @@ public class Driver extends Application {
         terry.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                tamas.switchTama("images/terry");
+                tamas.switchTama("images/terry/");
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
             }
         });
