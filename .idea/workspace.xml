@@ -4,14 +4,10 @@
     <list default="true" id="ca1500d7-ebb2-48e1-8103-51e3f1a3af0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Tama.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Tama.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/META-INF/TamaRevised.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tama.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +21,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="126" column="25" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="25" />
+            <state relative-caret-position="119">
+              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding>
+                <element signature="e#4070#4071#0" expanded="true" />
+                <element signature="e#4112#4113#0" expanded="true" />
+                <element signature="e#4163#4164#0" expanded="true" />
+                <element signature="e#4213#4214#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -34,12 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-              <folding>
-                <element signature="e#947#948#0" expanded="true" />
-                <element signature="e#975#976#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -47,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tamas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-78">
-              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            <state relative-caret-position="272">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -57,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/LoaderAndSaver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -85,18 +83,18 @@
         <option value="$PROJECT_DIR$/src/background" />
         <option value="$PROJECT_DIR$/src/background.css" />
         <option value="$PROJECT_DIR$/src/Hunger.java" />
-        <option value="$PROJECT_DIR$/src/Tamas.java" />
-        <option value="$PROJECT_DIR$/src/LoaderAndSaver.java" />
         <option value="$PROJECT_DIR$/src/Tama.java" />
+        <option value="$PROJECT_DIR$/src/LoaderAndSaver.java" />
+        <option value="$PROJECT_DIR$/src/Tamas.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="540" />
-    <option name="y" value="-12" />
-    <option name="width" value="960" />
-    <option name="height" value="1050" />
+    <option name="x" value="132" />
+    <option name="y" value="42" />
+    <option name="width" value="921" />
+    <option name="height" value="549" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -104,6 +102,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,12 +120,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554242878832" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554338455479" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Calender" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -133,12 +131,12 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alcp2\IdeaProjects\TamaRevised\src\images\background" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ethan Neece\Documents\GitHub\TamaRevised\src\images\terry" />
       <recent name="C:\Users\Ethan Neece\Documents\GitHub\TamaRevised\src\images\jerry" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alcp2\IdeaProjects\TamaRevised\src\images\background" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -194,10 +192,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21428572" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21862349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -206,7 +204,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4968017" weight="0.3434453" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49473685" visible="true" weight="0.22210184" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49473685" visible="true" weight="0.22222222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -214,7 +212,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50526315" side_tool="true" weight="0.19900498" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.079089925" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.07960199" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -264,6 +262,13 @@
     <entry file="file://$PROJECT_DIR$/src/images/buttons/CleanButton.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/saveData.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/background.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -277,42 +282,37 @@
     <entry file="file://$PROJECT_DIR$/src/images/terry/poo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="e#4070#4071#0" expanded="true" />
+            <element signature="e#4112#4113#0" expanded="true" />
+            <element signature="e#4163#4164#0" expanded="true" />
+            <element signature="e#4213#4214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tama.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tamas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-78">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="272">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LoaderAndSaver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saveData.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tama.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding>
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#975#976#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="126" column="25" selection-start-line="126" selection-start-column="25" selection-end-line="126" selection-end-column="25" />
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
         </state>
       </provider>
     </entry>

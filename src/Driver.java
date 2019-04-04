@@ -18,7 +18,7 @@ public class Driver extends Application {
     GridPane bg;
     BorderPane root;
     private Tamas tamas;
-    private ImageView tamaDisplay;
+    private ImageView tamaDis;
     private Thread hunger;
     private ProgressBar progress;
 
@@ -27,7 +27,12 @@ public class Driver extends Application {
         LoaderAndSaver load = new LoaderAndSaver();
 
         tamas = load.load();
-        tamaDisplay = new ImageView(tamas.getCurrentTama().getLooks());
+        VBox tamaDisplay = new VBox();
+        HBox poops = new HBox();
+//        tamaDisplay.setPrefSize(, 90);
+        tamaDis = new ImageView(tamas.getCurrentTama().getLooks());
+        tamaDisplay.getChildren().addAll(tamaDis, poops);
+
 
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
 
