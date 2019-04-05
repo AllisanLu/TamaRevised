@@ -10,7 +10,6 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -30,7 +29,7 @@ public class Driver extends Application {
         VBox tamaDisplay = new VBox();
         HBox poops = new HBox();
 //        tamaDisplay.setPrefSize(, 90);
-        tamaDis = new ImageView(tamas.getCurrentTama().getLooks());
+        tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
         tamaDisplay.getChildren().addAll(tamaDis, poops);
 
 
@@ -66,7 +65,7 @@ public class Driver extends Application {
             @Override
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/jerry/");
-                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
             }
         });
 
@@ -75,7 +74,7 @@ public class Driver extends Application {
             @Override
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/terry/");
-                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
             }
         });
 
@@ -114,14 +113,14 @@ public class Driver extends Application {
         buttons[1].setOnMouseClicked(e -> tamas.getCurrentTama().cleanPoop());
         buttons[2].setOnMouseClicked(e -> {
             tamas.getCurrentTama().reset();
-            updateTamaDisplay(tamas.getCurrentTama().getLooks());
+            updateTamaDisplay(tamas.getCurrentTama().updateLooks());
         });
 
         root.setBottom(buttonContainer);
    }
 
    private void updateTamaDisplay(Image image) {
-        tamaDisplay.setImage(image);
+        tamaDis.setImage(image);
    }
 
    private void updateProgress(double progress) {
@@ -132,7 +131,7 @@ public class Driver extends Application {
             while(true) {
                 tamas.getCurrentTama().update();
 
-                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
                 try {
                     Thread.sleep(100000);

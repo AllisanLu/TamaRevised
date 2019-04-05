@@ -57,18 +57,6 @@ public class Tama implements Serializable {
     public double getPercentHealth() {
         return (double) health /maxHealth;
     }
-    /**
-     *
-     * @return true if Tama leveled up; false otherwise.
-     */
-    public boolean levelUp() {
-        if(exp >= 100 && level != maxLevel) {
-            exp = 0;
-            level++;
-            return true;
-        }
-        return false;
-    }
 
     public boolean feed() {
 
@@ -90,9 +78,7 @@ public class Tama implements Serializable {
         return food < 0;
     }
 
-    public void poop() {
-        poop++;
-    }
+    private boolean isDead() { return health <= 0; }
 
     public void cleanPoop() {
         poop = 0;
@@ -100,13 +86,36 @@ public class Tama implements Serializable {
         System.out.println(this);
     }
 
-    public void update() {
+    private void updateLevel() {
         exp += 10;
-        food -= 2;
-        poop();
-        levelUp();
+        if(exp >= 100 && maxLevel != level) {
+            exp = 0;
+            level++;
+        }
+    }
 
-        getLooks();
+    private void uptick() {
+        food -= 2;
+        exp += 10;
+        poop++;
+
+        if(isStarving()) {
+            health -= 4;
+        }
+        else if(!isHungry() && health != maxHealth) {
+            health += 2;
+        }
+
+        if(isDead()) {
+            level = 0;
+        }
+    }
+
+    public void update() {
+        uptick();
+
+        updateLevel();
+        updateLooks();
 
         System.out.println(this);
     }
@@ -129,7 +138,7 @@ public class Tama implements Serializable {
         System.out.println(this);
     }
 
-    public Image getLooks() {
+    public Image updateLooks() {
         switch(level) {
             default: return new Image("images/poo.png");
             case 0: return new Image(fileName + "dead.gif");
