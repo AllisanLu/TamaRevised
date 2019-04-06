@@ -27,12 +27,10 @@ public class Driver extends Application {
         LoaderAndSaver load = new LoaderAndSaver();
 
         tamas = load.load();
-        VBox tamaDisplay = new VBox();
         HBox poops = new HBox();
-//        tamaDisplay.setPrefSize(, 90);
         tamaDis = new ImageView(tamas.getCurrentTama().getLooks());
-        tamaDisplay.getChildren().addAll(tamaDis, poops);
-
+        VBox tamaDisplay = new VBox(tamaDis, poops);
+        tamaDisplay.setAlignment(Pos.CENTER);
 
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
 
@@ -70,11 +68,11 @@ public class Driver extends Application {
             }
         });
 
-        MenuItem terry = new MenuItem("Terry");
+        MenuItem terry = new MenuItem("Boo");
         terry.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                tamas.switchTama("images/terry/");
+                tamas.switchTama("images/boo/");
                 updateTamaDisplay(tamas.getCurrentTama().getLooks());
             }
         });
@@ -121,7 +119,7 @@ public class Driver extends Application {
    }
 
    private void updateTamaDisplay(Image image) {
-        tamaDisplay.setImage(image);
+        tamaDis.setImage(image);
    }
 
    private void updateProgress(double progress) {

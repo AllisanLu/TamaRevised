@@ -14,7 +14,7 @@ public class LoaderAndSaver {
         Tamas tamas = null;
         try {
             if(file.createNewFile()) {
-                Tama terry = new Tama("images/terry/");
+                Tama terry = new Tama("images/boo/");
                 Tama jerry = new Tama("images/jerry/");
                 tamas = new Tamas(terry, jerry, terry);
             }

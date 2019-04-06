@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca1500d7-ebb2-48e1-8103-51e3f1a3af0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/META-INF/TamaRevised.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/LoaderAndSaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/LoaderAndSaver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/images/terry/Dead.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/images/terry/First.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/images/terry/Second.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/images/terry/poo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/saveData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoaderAndSaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoaderAndSaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/terry/Dead.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/terry/First.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/terry/Second.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/terry/poo.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,14 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding>
-                <element signature="e#4070#4071#0" expanded="true" />
-                <element signature="e#4112#4113#0" expanded="true" />
-                <element signature="e#4163#4164#0" expanded="true" />
-                <element signature="e#4213#4214#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="259">
+              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -54,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LoaderAndSaver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+            <state relative-caret-position="170">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -84,15 +89,15 @@
         <option value="$PROJECT_DIR$/src/background.css" />
         <option value="$PROJECT_DIR$/src/Hunger.java" />
         <option value="$PROJECT_DIR$/src/Tama.java" />
-        <option value="$PROJECT_DIR$/src/LoaderAndSaver.java" />
         <option value="$PROJECT_DIR$/src/Tamas.java" />
+        <option value="$PROJECT_DIR$/src/LoaderAndSaver.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="132" />
-    <option name="y" value="42" />
+    <option name="x" value="741" />
+    <option name="y" value="192" />
     <option name="width" value="921" />
     <option name="height" value="549" />
   </component>
@@ -102,8 +107,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,6 +123,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,7 +200,7 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21862349" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10364372" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -279,19 +284,11 @@
     <entry file="file://$PROJECT_DIR$/src/Hunger.java" />
     <entry file="file://$PROJECT_DIR$/src/images/poo.png" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/image/Image.java" />
-    <entry file="file://$PROJECT_DIR$/src/images/terry/poo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/terry/poo.png" />
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="e#4070#4071#0" expanded="true" />
-            <element signature="e#4112#4113#0" expanded="true" />
-            <element signature="e#4163#4164#0" expanded="true" />
-            <element signature="e#4213#4214#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="259">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -311,8 +308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LoaderAndSaver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+        <state relative-caret-position="170">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
         </state>
       </provider>
     </entry>
