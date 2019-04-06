@@ -28,11 +28,9 @@ public class Driver extends Application {
         tamas = load.load();
         HBox poops = new HBox();
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
+        tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
         VBox tamaDisplay = new VBox(tamaDis, poops);
         tamaDisplay.setAlignment(Pos.CENTER);
-//        tamaDisplay.setPrefSize(, 90);
-        tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
-        tamaDisplay.getChildren().addAll(tamaDis, poops);
 
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
 
