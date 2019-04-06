@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca1500d7-ebb2-48e1-8103-51e3f1a3af0b" name="Default Changelist" comment="">
+<<<<<<< HEAD
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/TamaRevised.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Driver.class" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/LoaderAndSaver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/LoaderAndSaver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/images/terry/Dead.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/images/terry/First.gif" beforeDir="false" />
@@ -19,6 +26,12 @@
       <change beforePath="$PROJECT_DIR$/src/images/terry/First.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/images/terry/Second.gif" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/images/terry/poo.png" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Tama.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Tama.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveData.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tama.java" afterDir="false" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +45,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="259">
               <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+=======
+            <state relative-caret-position="-1473">
+              <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+              <folding>
+                <element signature="e#4234#4235#0" expanded="true" />
+                <element signature="e#4276#4277#0" expanded="true" />
+              </folding>
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
             </state>
           </provider>
         </entry>
@@ -41,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="411">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
             </state>
           </provider>
         </entry>
@@ -88,18 +110,31 @@
         <option value="$PROJECT_DIR$/src/background" />
         <option value="$PROJECT_DIR$/src/background.css" />
         <option value="$PROJECT_DIR$/src/Hunger.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/Tama.java" />
+=======
+        <option value="$PROJECT_DIR$/src/LoaderAndSaver.java" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
         <option value="$PROJECT_DIR$/src/Tamas.java" />
         <option value="$PROJECT_DIR$/src/LoaderAndSaver.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
+        <option value="$PROJECT_DIR$/src/Tama.java" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="741" />
     <option name="y" value="192" />
     <option name="width" value="921" />
     <option name="height" value="549" />
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="315" />
+    <option name="y" value="106" />
+    <option name="width" value="1063" />
+    <option name="height" value="678" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -107,6 +142,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -119,20 +158,29 @@
               <item name="TamaRevised" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TamaRevised" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TamaRevised" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554338455479" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Calender" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554438349297" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15527344" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -197,10 +245,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10364372" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22107969" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -208,8 +259,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4968017" weight="0.3434453" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49473685" visible="true" weight="0.22222222" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4968017" weight="0.34320322" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49473685" visible="true" weight="0.22207268" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -217,7 +268,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50526315" side_tool="true" weight="0.19900498" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.07960199" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.20457605" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -284,18 +335,28 @@
     <entry file="file://$PROJECT_DIR$/src/Hunger.java" />
     <entry file="file://$PROJECT_DIR$/src/images/poo.png" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/image/Image.java" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/images/terry/poo.png" />
     <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/images/terry/poo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoaderAndSaver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tama.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="411">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
@@ -306,10 +367,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoaderAndSaver.java">
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="170">
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+=======
+        <state relative-caret-position="-1473">
+          <caret line="31" column="66" selection-start-line="31" selection-start-column="66" selection-end-line="31" selection-end-column="66" />
+          <folding>
+            <element signature="e#4234#4235#0" expanded="true" />
+            <element signature="e#4276#4277#0" expanded="true" />
+          </folding>
+>>>>>>> 4a916da43e7517b827d4c54e1a05eaff989d40de
         </state>
       </provider>
     </entry>
@@ -318,11 +388,17 @@
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
-          <artifact-editor />
+          <artifact-editor>
+            <show-content>
+              <type id="library" />
+            </show-content>
+          </artifact-editor>
+          <last-edited>TamaRevised</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -353,7 +429,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8.0_191</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -370,7 +446,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

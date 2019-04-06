@@ -10,7 +10,6 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -28,9 +27,12 @@ public class Driver extends Application {
 
         tamas = load.load();
         HBox poops = new HBox();
-        tamaDis = new ImageView(tamas.getCurrentTama().getLooks());
+        tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
         VBox tamaDisplay = new VBox(tamaDis, poops);
         tamaDisplay.setAlignment(Pos.CENTER);
+//        tamaDisplay.setPrefSize(, 90);
+        tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
+        tamaDisplay.getChildren().addAll(tamaDis, poops);
 
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
 
@@ -64,7 +66,7 @@ public class Driver extends Application {
             @Override
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/jerry/");
-                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
             }
         });
 
@@ -73,7 +75,9 @@ public class Driver extends Application {
             @Override
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/boo/");
-                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
+                tamas.switchTama("images/terry/");
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
             }
         });
 
@@ -112,7 +116,7 @@ public class Driver extends Application {
         buttons[1].setOnMouseClicked(e -> tamas.getCurrentTama().cleanPoop());
         buttons[2].setOnMouseClicked(e -> {
             tamas.getCurrentTama().reset();
-            updateTamaDisplay(tamas.getCurrentTama().getLooks());
+            updateTamaDisplay(tamas.getCurrentTama().updateLooks());
         });
 
         root.setBottom(buttonContainer);
@@ -130,7 +134,7 @@ public class Driver extends Application {
             while(true) {
                 tamas.getCurrentTama().update();
 
-                updateTamaDisplay(tamas.getCurrentTama().getLooks());
+                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
                 try {
                     Thread.sleep(100000);
