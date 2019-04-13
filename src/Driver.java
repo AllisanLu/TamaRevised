@@ -120,7 +120,10 @@ public class Driver extends Application {
                 }
 
         });
-        buttons[1].setOnMouseClicked(e -> tamas.getCurrentTama().cleanPoop());
+        buttons[1].setOnMouseClicked(e -> {
+            tamas.getCurrentTama().cleanPoop();
+            poops.getChildren().removeAll();
+        });
         buttons[2].setOnMouseClicked(e -> {
             tamas.getCurrentTama().reset();
             updateTamaDisplay(tamas.getCurrentTama().updateLooks());

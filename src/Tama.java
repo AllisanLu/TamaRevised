@@ -98,7 +98,7 @@ public class Tama implements Serializable {
 
     public void cleanPoop() {
         poop = 0;
-
+        poopPics.removeAll(poopPics);
         System.out.println(this);
     }
 
