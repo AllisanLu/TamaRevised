@@ -80,10 +80,22 @@ public class Tama implements Serializable {
 
     private boolean isDead() { return health <= 0; }
 
+    private boolean isDirty() {
+        return poop >= 5;
+    }
+
+    private void die() {
+        level = 0;
+    }
+
     public void cleanPoop() {
         poop = 0;
 
         System.out.println(this);
+    }
+
+    public Image poop() {
+        poop++;
     }
 
     private void updateLevel() {
@@ -99,7 +111,7 @@ public class Tama implements Serializable {
         exp += 10;
         poop++;
 
-        if(isStarving()) {
+        if(isStarving() && !isDead()) {
             health -= 4;
         }
         else if(!isHungry() && health != maxHealth) {
@@ -107,7 +119,7 @@ public class Tama implements Serializable {
         }
 
         if(isDead()) {
-            level = 0;
+            die();
         }
     }
 
@@ -123,6 +135,7 @@ public class Tama implements Serializable {
     @Override
     public String toString() {
         return "File: " + fileName + "\n\t" +
+                "Health: " + health + "\n\t" +
                 "Food: " + food + "\n\t" +
                 "Exp: " + exp + "\n\t" +
                 "Poop: " + poop + "\n\t" +
@@ -132,6 +145,7 @@ public class Tama implements Serializable {
     public void reset() {
         food = 8;
         exp = 0;
+        health = maxHealth;
         cleanPoop();
         level = 1;
 
