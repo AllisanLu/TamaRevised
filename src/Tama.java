@@ -65,6 +65,7 @@ public class Tama implements Serializable {
         if(isHungry()) {
             exp +=  5;
             food += 3;
+            poop();
             return true;
         }
         return false;
@@ -96,6 +97,7 @@ public class Tama implements Serializable {
 
     public Image poop() {
         poop++;
+        return new Image("images/poo.png");
     }
 
     private void updateLevel() {
