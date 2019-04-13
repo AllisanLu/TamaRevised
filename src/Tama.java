@@ -1,9 +1,11 @@
 import javafx.scene.image.Image;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Tama implements Serializable {
     private int food, exp, poop, level, health, maxHealth;
+    private ArrayList<Image> poopPics = new ArrayList<Image>();
     private String fileName;
 
     private Image look;
@@ -20,6 +22,10 @@ public class Tama implements Serializable {
         food = 5;
         health = 10;
         maxHealth = 10;
+    }
+
+    public ArrayList<Image> getPoopPics() {
+        return poopPics;
     }
 
     public int getFood() {
@@ -65,7 +71,8 @@ public class Tama implements Serializable {
         if(isHungry()) {
             exp +=  5;
             food += 3;
-            poop();
+            poop++;
+            poopPics.add(new Image("images/poo.png"));
             return true;
         }
         return false;
@@ -93,11 +100,6 @@ public class Tama implements Serializable {
         poop = 0;
 
         System.out.println(this);
-    }
-
-    public Image poop() {
-        poop++;
-        return new Image("images/poo.png");
     }
 
     private void updateLevel() {

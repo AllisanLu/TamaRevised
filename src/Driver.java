@@ -13,6 +13,8 @@ import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class Driver extends Application {
     GridPane bg;
     BorderPane root;
@@ -20,13 +22,13 @@ public class Driver extends Application {
     private ImageView tamaDis;
     private Thread hunger;
     private ProgressBar progress;
+    private HBox poops = new HBox();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         LoaderAndSaver load = new LoaderAndSaver();
 
         tamas = load.load();
-        HBox poops = new HBox();
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
         VBox tamaDisplay = new VBox(tamaDis, poops);
@@ -110,7 +112,14 @@ public class Driver extends Application {
             buttons[i] = button;
         }
 
-        buttons[0].setOnMouseClicked(e -> tamas.getCurrentTama().feed());
+        buttons[0].setOnMouseClicked(e -> {
+                tamas.getCurrentTama().feed();
+                ArrayList<Image> poopPics = tamas.getCurrentTama().getPoopPics();
+                for(int i = 0; i < poopPics.size(); i++){
+                    poops.getChildren().add(new ImageView(poopPics.get(i)));
+                }
+
+        });
         buttons[1].setOnMouseClicked(e -> tamas.getCurrentTama().cleanPoop());
         buttons[2].setOnMouseClicked(e -> {
             tamas.getCurrentTama().reset();
