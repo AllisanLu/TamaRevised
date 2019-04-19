@@ -1,20 +1,16 @@
 import javafx.scene.image.Image;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Tama implements Serializable {
     private int food, exp, poop, level, health, maxHealth;
-    private ArrayList<Image> poopPics = new ArrayList<Image>();
+    private boolean[] visiblePoop;
     private String fileName;
 
-    private Image look;
+    public static int MAX_POOPS = 20;
 
     private int maxLevel;
-
-    public Tama() {
-        level = 1;
-    }
 
     public Tama(String fileName) {
         level = 1;
@@ -22,10 +18,11 @@ public class Tama implements Serializable {
         food = 5;
         health = 10;
         maxHealth = 10;
+        visiblePoop = new boolean[MAX_POOPS];
     }
 
-    public ArrayList<Image> getPoopPics() {
-        return poopPics;
+    public boolean[] getVisiblePoop() {
+        return visiblePoop;
     }
 
     public int getFood() {
@@ -72,7 +69,14 @@ public class Tama implements Serializable {
             exp +=  5;
             food += 3;
             poop++;
-            poopPics.add(new Image("images/poo.png"));
+
+            int randomPoop = (int) (Math.random() * MAX_POOPS);
+            while(visiblePoop[randomPoop] == true) {
+                randomPoop = (int) (Math.random() * MAX_POOPS);
+            }
+
+            visiblePoop[randomPoop] = true;
+
             return true;
         }
         return false;
@@ -94,11 +98,13 @@ public class Tama implements Serializable {
 
     private void die() {
         level = 0;
+        health = 0;
+        exp = 0;
     }
 
     public void cleanPoop() {
         poop = 0;
-        poopPics.removeAll(poopPics);
+        Arrays.fill(visiblePoop, false);
         System.out.println(this);
     }
 

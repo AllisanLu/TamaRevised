@@ -22,7 +22,7 @@ public class Driver extends Application {
     private ImageView tamaDis;
     private Thread hunger;
     private ProgressBar progress;
-    private HBox poops = new HBox();
+    private HBox poops;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -31,6 +31,12 @@ public class Driver extends Application {
         tamas = load.load();
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
+
+        poops = new HBox(3);
+        for (int i = 0; i < Tama.MAX_POOPS; i++) {
+            poops.getChildren().add(new ImageView(tamas.getCurrentTama().getFileName() + "poo.png"));
+        }
+
         VBox tamaDisplay = new VBox(tamaDis, poops);
         tamaDisplay.setAlignment(Pos.CENTER);
 
@@ -112,18 +118,9 @@ public class Driver extends Application {
             buttons[i] = button;
         }
 
-        buttons[0].setOnMouseClicked(e -> {
-                tamas.getCurrentTama().feed();
-                ArrayList<Image> poopPics = tamas.getCurrentTama().getPoopPics();
-                for(int i = 0; i < poopPics.size(); i++){
-                    poops.getChildren().add(new ImageView(poopPics.get(i)));
-                }
+        buttons[0].setOnMouseClicked(e -> { tamas.getCurrentTama().feed(); });
+        buttons[1].setOnMouseClicked(e -> { tamas.getCurrentTama().cleanPoop(); });
 
-        });
-        buttons[1].setOnMouseClicked(e -> {
-            tamas.getCurrentTama().cleanPoop();
-            poops.getChildren().removeAll();
-        });
         buttons[2].setOnMouseClicked(e -> {
             tamas.getCurrentTama().reset();
             updateTamaDisplay(tamas.getCurrentTama().updateLooks());
@@ -144,6 +141,7 @@ public class Driver extends Application {
             while(true) {
                 tamas.getCurrentTama().update();
 
+                updatePoops();
                 updateTamaDisplay(tamas.getCurrentTama().updateLooks());
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
                 try {
@@ -156,4 +154,15 @@ public class Driver extends Application {
       hunger.start();
     }
 
+    private void updatePoops() {
+
+        boolean[] visiblePoop = tamas.getCurrentTama().getVisiblePoop();
+        for (int i = 0; i < Tama.MAX_POOPS; i++) {
+            ImageView poop = (ImageView) poops.getChildren().get(i);
+            if(visiblePoop[i])
+                poop.setVisible(true);
+            else
+                poop.setVisible(false);
+        }
+    }
 }
