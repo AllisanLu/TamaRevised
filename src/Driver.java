@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class Driver extends Application {
-    GridPane bg;
     BorderPane root;
     private Tamas tamas;
     private ImageView tamaDis;
@@ -30,14 +29,14 @@ public class Driver extends Application {
 
         tamas = load.load();
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
-        tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
 
         poops = new HBox(3);
-        for (int i = 0; i < Tama.MAX_POOPS; i++) {
-            poops.getChildren().add(new ImageView(tamas.getCurrentTama().getFileName() + "poo.png"));
+       for(int i = 0; i < Tama.MAX_POOPS; i++) {
+            poops.getChildren().add(new ImageView("images/poo.png"));
         }
 
-        VBox tamaDisplay = new VBox(tamaDis, poops);
+        VBox tamaDisplay = new VBox(tamaDis);
+       tamaDisplay.getChildren().add(poops);
         tamaDisplay.setAlignment(Pos.CENTER);
 
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
@@ -50,19 +49,19 @@ public class Driver extends Application {
 
         primaryStage.setScene(scene);
 
-        bg = new GridPane();
         root.setTop(progress);
-        root.setCenter(bg);
+        //TODO: set alignment to the top right <3
+
         root.setCenter(tamaDisplay);
         createButtons();
         createMenu();
         primaryStage.show();
 
+        hunger();
         primaryStage.setOnCloseRequest(e -> {
             load.save(tamas);
             hunger.stop();
         });
-        hunger();
     }
 
     private void createMenu(){
@@ -155,7 +154,6 @@ public class Driver extends Application {
     }
 
     private void updatePoops() {
-
         boolean[] visiblePoop = tamas.getCurrentTama().getVisiblePoop();
         for (int i = 0; i < Tama.MAX_POOPS; i++) {
             ImageView poop = (ImageView) poops.getChildren().get(i);

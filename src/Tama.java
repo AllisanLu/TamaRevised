@@ -8,7 +8,7 @@ public class Tama implements Serializable {
     private boolean[] visiblePoop;
     private String fileName;
 
-    public static int MAX_POOPS = 20;
+    public static int MAX_POOPS = 7;
 
     private int maxLevel;
 
