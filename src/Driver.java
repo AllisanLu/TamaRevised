@@ -46,7 +46,7 @@ public class Driver extends Application {
         root.setId("root");
         Scene scene = new Scene(root,200, 250);
         scene.getStylesheets().add("background.css");
-
+        primaryStage.getIcons().add(new Image("images/Egg.png"));
         primaryStage.setScene(scene);
 
         root.setTop(progress);
