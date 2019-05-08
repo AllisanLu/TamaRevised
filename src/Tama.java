@@ -8,7 +8,7 @@ public class Tama implements Serializable {
     private boolean[] visiblePoop;
     private String fileName;
 
-    public static int MAX_POOPS = 7;
+    public static int MAX_POOPS = 5;
 
     private int maxLevel;
 
@@ -119,7 +119,7 @@ public class Tama implements Serializable {
     private void uptick() {
         food -= 2;
         exp += 10;
-        poop++;
+        //poop++;
 
         if(isStarving() && !isDead()) {
             health -= 4;
