@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ca1500d7-ebb2-48e1-8103-51e3f1a3af0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TamaRevised/Tama.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TamaRevised/Tama.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/saveData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/saveData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/boo/Second.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,14 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-              <folding>
-                <element signature="e#4588#4589#0" expanded="true" />
-                <element signature="e#4626#4627#0" expanded="true" />
-                <element signature="e#4677#4678#0" expanded="true" />
-                <element signature="e#4727#4728#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -38,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tama.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="911">
-              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+            <state relative-caret-position="1564">
+              <caret line="121" column="17" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tamas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
+            <state relative-caret-position="272">
               <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
             </state>
           </provider>
@@ -69,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/background.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -119,10 +112,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1231" />
-    <option name="y" value="85" />
-    <option name="width" value="614" />
-    <option name="height" value="366" />
+    <option name="x" value="426" />
+    <option name="y" value="-18" />
+    <option name="width" value="921" />
+    <option name="height" value="627" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -131,6 +124,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,12 +141,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557174114609" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2D-Physics-Engine" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -221,8 +214,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1319838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1417004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -309,9 +303,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tama.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="121" column="17" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tamas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
+        <state relative-caret-position="272">
           <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
         </state>
       </provider>
@@ -326,30 +337,7 @@
     <entry file="file://$PROJECT_DIR$/src/background.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tama.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="911">
-          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding>
-            <element signature="e#4588#4589#0" expanded="true" />
-            <element signature="e#4626#4627#0" expanded="true" />
-            <element signature="e#4677#4678#0" expanded="true" />
-            <element signature="e#4727#4728#0" expanded="true" />
-          </folding>
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
