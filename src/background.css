@@ -1,3 +1,7 @@
 #root{
     -fx-background-image: url('images/Border1.png');
 }
+
+#progress{
+    -fx-accent: #a0e8a8;
+}

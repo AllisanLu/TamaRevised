@@ -11,6 +11,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -19,6 +22,7 @@ public class Driver extends Application {
     BorderPane root;
     private Tamas tamas;
     private ImageView tamaDis;
+    private Text speech;
     private Thread hunger;
     private ProgressBar progress;
     private HBox poops;
@@ -31,15 +35,19 @@ public class Driver extends Application {
         tamaDis = new ImageView(tamas.getCurrentTama().updateLooks());
 
         poops = new HBox(3);
-       for(int i = 0; i < Tama.MAX_POOPS; i++) {
+        for(int i = 0; i < Tama.MAX_POOPS; i++) {
             poops.getChildren().add(new ImageView("images/poo.png"));
         }
+        poops.setAlignment(Pos.CENTER);
 
-        VBox tamaDisplay = new VBox(tamaDis);
-       tamaDisplay.getChildren().add(poops);
+        speech = new Text("I'm full!");
+        speech.setFont(Font.font ("MV Boli", 12));
+        updateSpeech();
+
+        VBox tamaDisplay = new VBox(speech, tamaDis);
+        tamaDisplay.getChildren().add(poops);
         tamaDisplay.setAlignment(Pos.CENTER);
-
-        progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
+        updatePoops();
 
         primaryStage.setTitle("Tama");
         root = new BorderPane();
@@ -49,8 +57,9 @@ public class Driver extends Application {
         primaryStage.getIcons().add(new Image("images/Egg.png"));
         primaryStage.setScene(scene);
 
+        progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
+        progress.setId("progress");
         root.setTop(progress);
-        //TODO: set alignment to the top right <3
 
         root.setCenter(tamaDisplay);
         createButtons();
@@ -117,41 +126,52 @@ public class Driver extends Application {
             buttons[i] = button;
         }
 
-        buttons[0].setOnMouseClicked(e -> { tamas.getCurrentTama().feed(); });
-        buttons[1].setOnMouseClicked(e -> { tamas.getCurrentTama().cleanPoop(); });
+        buttons[0].setOnMouseClicked(e -> {
+            tamas.getCurrentTama().feed();
+            updateSpeech();
+            updatePoops();
+            updateProgress(tamas.getCurrentTama().getPercentHealth());
+        });
+        buttons[1].setOnMouseClicked(e -> {
+            tamas.getCurrentTama().cleanPoop();
+            updatePoops();
+        });
 
         buttons[2].setOnMouseClicked(e -> {
             tamas.getCurrentTama().reset();
             updateTamaDisplay(tamas.getCurrentTama().updateLooks());
+            updatePoops();
+            updateSpeech();
         });
 
         root.setBottom(buttonContainer);
    }
 
-   private void updateTamaDisplay(Image image) {
-        tamaDis.setImage(image);
-   }
-
-   private void updateProgress(double progress) {
-        this.progress.setProgress(progress);
-   }
     private void hunger(){
-      hunger = new Thread( () -> {
+        hunger = new Thread( () -> {
             while(true) {
                 tamas.getCurrentTama().update();
 
-                updatePoops();
                 updateTamaDisplay(tamas.getCurrentTama().updateLooks());
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
+                updateSpeech();
                 try {
                     Thread.sleep(100000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            });
-      hunger.start();
+        });
+        hunger.start();
     }
+
+    private void updateTamaDisplay(Image image) {
+        tamaDis.setImage(image);
+   }
+
+   private void updateProgress(double progress) {
+        this.progress.setProgress(progress);
+   }
 
     private void updatePoops() {
         boolean[] visiblePoop = tamas.getCurrentTama().getVisiblePoop();
@@ -162,5 +182,12 @@ public class Driver extends Application {
             else
                 poop.setVisible(false);
         }
+    }
+
+    private void updateSpeech(){
+        if(tamas.getCurrentTama().isHungry())
+            speech.setVisible(false);
+        else
+            speech.setVisible(true);
     }
 }

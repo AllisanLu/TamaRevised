@@ -21,6 +21,7 @@ public class Tama implements Serializable {
         visiblePoop = new boolean[MAX_POOPS];
     }
 
+
     public boolean[] getVisiblePoop() {
         return visiblePoop;
     }
@@ -68,6 +69,8 @@ public class Tama implements Serializable {
         if(isHungry()) {
             exp +=  5;
             food += 3;
+            if(health < maxHealth)
+                health += 2;
             poop++;
 
             int randomPoop = (int) (Math.random() * MAX_POOPS);
@@ -82,7 +85,7 @@ public class Tama implements Serializable {
         return false;
     }
 
-    private boolean isHungry() {
+    public boolean isHungry() {
         return food < 5;
     }
 
@@ -118,7 +121,7 @@ public class Tama implements Serializable {
 
     private void uptick() {
         food -= 2;
-        exp += 10;
+        exp += 2;
         //poop++;
 
         if(isStarving() && !isDead()) {
