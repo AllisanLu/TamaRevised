@@ -156,7 +156,7 @@ public class Driver extends Application {
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
                 updateSpeech();
                 try {
-                    Thread.sleep(100000);
+                    Thread.sleep(3600000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
