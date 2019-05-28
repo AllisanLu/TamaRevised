@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="TamaRevised:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TamaRevised_jar</output-path>
+    <root id="archive" name="TamaRevised.jar">
+      <element id="module-output" name="TamaRevised" />
+    </root>
+  </artifact>
+</component>
