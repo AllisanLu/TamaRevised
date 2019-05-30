@@ -57,9 +57,13 @@ public class Driver extends Application {
         primaryStage.getIcons().add(new Image("images/Egg.png"));
         primaryStage.setScene(scene);
 
+        ImageView heart = new ImageView(new Image("images/ClearHeart.png"));
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
+        progress.setMaxHeight(5);
         progress.setId("progress");
-        root.setTop(progress);
+        HBox design = new HBox(heart, progress);
+        design.setAlignment(Pos.CENTER_RIGHT);
+        root.setTop(design);
 
         root.setCenter(tamaDisplay);
         createButtons();
@@ -81,6 +85,9 @@ public class Driver extends Application {
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/jerry/");
                 updateTamaDisplay(tamas.getCurrentTama().updateLooks());
+                updatePoops();
+                updateSpeech();
+                updateProgress(tamas.getCurrentTama().getPercentHealth());
             }
         });
 
@@ -90,8 +97,11 @@ public class Driver extends Application {
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/boo/");
                 updateTamaDisplay(tamas.getCurrentTama().updateLooks());
-                tamas.switchTama("images/terry/");
-                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
+//                tamas.switchTama("images/terry/");
+//                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
+                updatePoops();
+                updateSpeech();
+                updateProgress(tamas.getCurrentTama().getPercentHealth());
             }
         });
 
@@ -142,6 +152,7 @@ public class Driver extends Application {
             updateTamaDisplay(tamas.getCurrentTama().updateLooks());
             updatePoops();
             updateSpeech();
+            updateProgress(tamas.getCurrentTama().getPercentHealth());
         });
 
         root.setBottom(buttonContainer);

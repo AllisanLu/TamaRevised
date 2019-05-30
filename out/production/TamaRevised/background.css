@@ -2,6 +2,15 @@
     -fx-background-image: url('images/Border1.png');
 }
 
-#progress{
-    -fx-accent: #a0e8a8;
+
+.progress-bar > .bar {
+    -fx-background-insets: 1 1 2 1;
+    -fx-padding: 0.3em;
+    -fx-box-border: #000000;
 }
+
+#progress{
+    -fx-accent: #89DE83;
+    -fx-padding: 0.7em;
+}
+
