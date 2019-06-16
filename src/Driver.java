@@ -52,10 +52,11 @@ public class Driver extends Application {
         primaryStage.setTitle("Tama");
         root = new BorderPane();
         root.setId("root");
-        Scene scene = new Scene(root,200, 250);
+        Scene scene = new Scene(root,189, 239);
         scene.getStylesheets().add("background.css");
         primaryStage.getIcons().add(new Image("images/Egg.png"));
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
 
         ImageView heart = new ImageView(new Image("images/ClearHeart.png"));
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
