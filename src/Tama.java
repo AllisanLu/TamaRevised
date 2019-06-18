@@ -6,21 +6,25 @@ import java.util.Arrays;
 public class Tama implements Serializable {
     private int food, exp, poop, level, health, maxHealth;
     private boolean[] visiblePoop;
-    private String fileName;
+    private String fileName, name;
 
     public static int MAX_POOPS = 5;
 
     private int maxLevel;
 
-    public Tama(String fileName) {
+    public Tama(String name) {
         level = 1;
-        this.fileName = fileName;
+        fileName = "images/" + name + "/";
+        this.name = name;
         food = 5;
         health = 10;
         maxHealth = 10;
         visiblePoop = new boolean[MAX_POOPS];
     }
 
+    public int getLevel() {
+        return level;
+    }
 
     public boolean[] getVisiblePoop() {
         return visiblePoop;
@@ -57,6 +61,11 @@ public class Tama implements Serializable {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
+
+    public String getName() {
+        return name;
+    }
+
 
     public double getPercentHealth() {
         return (double) health /maxHealth;
@@ -121,7 +130,7 @@ public class Tama implements Serializable {
 
     private void uptick() {
         food -= 2;
-        exp += 2;
+        exp += 1;
         //poop++;
 
         if(isStarving() && !isDead()) {

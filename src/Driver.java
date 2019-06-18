@@ -3,10 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ContextMenuEvent;
@@ -14,6 +11,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class Driver extends Application {
     BorderPane root;
     private Tamas tamas;
     private ImageView tamaDis;
-    private Text speech;
+    private Text speech, name;
     private Thread hunger;
     private ProgressBar progress;
     private HBox poops;
@@ -62,7 +60,15 @@ public class Driver extends Application {
         progress = new ProgressBar(tamas.getCurrentTama().getPercentHealth());
         progress.setMaxHeight(5);
         progress.setId("progress");
-        HBox design = new HBox(heart, progress);
+        HBox healthStuff = new HBox(heart, progress);
+        healthStuff.setAlignment(Pos.CENTER_RIGHT);
+
+        name = new Text(tamas.getCurrentTama().getName());
+        name.setFont(Font.font ("MV Boli", 14));
+        name.setTextAlignment(TextAlignment.LEFT);
+
+        HBox design = new HBox(name, healthStuff);
+        design.setSpacing(40);
         design.setAlignment(Pos.CENTER_RIGHT);
         root.setTop(design);
 
@@ -89,6 +95,8 @@ public class Driver extends Application {
                 updatePoops();
                 updateSpeech();
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
+                name.setText(tamas.getCurrentTama().getName());
+
             }
         });
 
@@ -98,11 +106,10 @@ public class Driver extends Application {
             public void handle(ActionEvent event) {
                 tamas.switchTama("images/boo/");
                 updateTamaDisplay(tamas.getCurrentTama().updateLooks());
-//                tamas.switchTama("images/terry/");
-//                updateTamaDisplay(tamas.getCurrentTama().updateLooks());
                 updatePoops();
                 updateSpeech();
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
+                name.setText(tamas.getCurrentTama().getName());
             }
         });
 
@@ -138,14 +145,18 @@ public class Driver extends Application {
         }
 
         buttons[0].setOnMouseClicked(e -> {
-            tamas.getCurrentTama().feed();
-            updateSpeech();
-            updatePoops();
-            updateProgress(tamas.getCurrentTama().getPercentHealth());
+            if(tamas.getCurrentTama().getLevel() > 0) {
+                tamas.getCurrentTama().feed();
+                updateSpeech();
+                updatePoops();
+                updateProgress(tamas.getCurrentTama().getPercentHealth());
+            }
         });
         buttons[1].setOnMouseClicked(e -> {
             tamas.getCurrentTama().cleanPoop();
-            updatePoops();
+            if(tamas.getCurrentTama().getLevel() > 0) {
+                updatePoops();
+            }
         });
 
         buttons[2].setOnMouseClicked(e -> {
@@ -162,7 +173,7 @@ public class Driver extends Application {
     private void hunger(){
         hunger = new Thread( () -> {
             while(true) {
-                tamas.getCurrentTama().update();
+                tamas.updateTamas();
 
                 updateTamaDisplay(tamas.getCurrentTama().updateLooks());
                 updateProgress(tamas.getCurrentTama().getPercentHealth());
